@@ -1,13 +1,38 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package libroJava;
-
+import java.util.Scanner;
 /**
- *
+ *Llena matriz con numeros aleatorios.
+ * En el siguiente programa,pedimos al usuario que ingrese las dimensiones de una matriz (filas y columnas),
+ * creamos una matriz de esas dimensiones y la llenamos con numeros generados aleatoriamente.
  * @author car
  */
 public class DemoMatriz {
-    
-}
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Ingrese cantidad de filas: ");
+        int n=scanner.nextInt();
+        
+        System.out.print("Ingrese cantidad de columnas: ");
+        int m=scanner.nextInt();
+       //creo una matriz de n filas x m columnas
+       int mat[][]= new int[n][m];
+       
+       int nro;
+       for(int i=0;i<n;i++){
+           for(int j=0; j<m; j++){
+               //genero un numero aleatorio entre 0 y 1000
+               nro=(int) (Math.random()*1000);
+               //asigno el numero en la matriz
+               mat[i][j]=nro;
+           }
+       }
+       for(int i=0; i<n; i++){
+           for(int j=0; j<m; j++){
+               //imprimo la celda de la matriz
+               System.out.print(mat[i][j] + "\t");
+           }
+           System.out.println();
+       }
+    }     
+  }
