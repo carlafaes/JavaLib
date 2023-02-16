@@ -18,6 +18,7 @@ public class Fecha {
         int pos2=s.lastIndexOf("/");
         //proceso el dia
         String sDia=s.substring(0,pos1);
+        dia=Integer.parseInt(sDia);
         //proceso el mes 
         String sMes=s.substring(pos1+1,pos2);
         mes=Integer.parseInt(sMes);
@@ -26,9 +27,15 @@ public class Fecha {
         año=Integer.parseInt(sAño);
     }
 
-    Fecha() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Fecha(int d,int m, int a) {
+      dia=d;
+      mes=m;
+      año=a;
     }
+    public Fecha(){
+    }
+
+    
     public int getDia(){
         //retorna el valor de la variable dia
         return dia;
